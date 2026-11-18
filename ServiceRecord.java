@@ -10,6 +10,8 @@ public class ServiceRecord{
         completed = false;
     }
 
+
+    // Getters
     public String getDescription(){
         return description;
     }
@@ -32,4 +34,21 @@ public class ServiceRecord{
             cost += amount;
         }
     }
+
+    public void markComplete(){
+        completed = true;
+    }
+
+    public String toString(){
+        String status;
+
+        if (completed){
+            status = "complete";
+        } else {
+            status = "open";
+        }
+
+        return description + ": $"  + cost + " (" + status + ")";
+    }
+
 }
